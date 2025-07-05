@@ -1,8 +1,9 @@
--- BillReducGas 20250703
+-- BillReducGas 
+-- 20250705
 
 SUM(
 	CASE
-		WHEN NOT ISNULL(ft.FuelType,0) = '0' AND (Thm1  (ISNULL(RateG1, 0) + ISNULL(RateGFrac1,0)) + Thm2  (ISNULL(RateGFrac2_1,0)+ISNULL(RateG2,0)+ISNULL(RateGFrac2_2,0)))<0
+		WHEN NOT ISNULL(ft.FuelType,0) = '0' OR (Thm1  (ISNULL(RateG1, 0) + ISNULL(RateGFrac1,0)) + Thm2  (ISNULL(RateGFrac2_1,0)+ISNULL(RateG2,0)+ISNULL(RateGFrac2_2,0))) > 0
 		THEN
 			ISNULL(
 				-Qty *
