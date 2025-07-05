@@ -7,7 +7,7 @@ SUM(
 			OR (Thm1  (ISNULL(RateG1, 0) + ISNULL(RateGFrac1,0)) + Thm2  (ISNULL(RateGFrac2_1,0)+ISNULL(RateG2,0)+ISNULL(RateGFrac2_2,0))) > 0
 		THEN
 			ISNULL(
-				-Qty *
+				Qty *
 				IR *
 				RR *
 				( NTGRThm + @MEBens ) *
